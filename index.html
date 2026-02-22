@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículo | Gabriel Girami</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Gabriel Girami</h1>
+        <p class="subtitle"><strong>Cloud Practitioner | Analista de Sistemas | Entusiasta DevOps</strong></p>
+        <div class="contact-info">
+            📍 São Paulo, Brasil | 🎂 22 anos | 📧 <a href="mailto:gabrielgirami@icloud.com">gabrielgirami@icloud.com</a><br>
+            📞 <a href="https://wa.me/5511995778161" target="_blank">+55 (11) 99577-8161</a> | 
+            🔗 <a href="https://github.com/gabrielgirami2" target="_blank">GitHub</a> | 
+            🔗 <a href="https://linkedin.com/in/gabrielgirami" target="_blank">LinkedIn</a>
+        </div>
+        <p style="font-size: 0.9em; margin-top: 10px;">🌍 Inglês: B2+ (Intermediário/Avançado)</p>
+    </header>
+
+    <section>
+        <h3>🎯 Resumo Profissional</h3>
+        <p>Graduado em Análise e Desenvolvimento de Sistemas pela FIAP, com sólida base em Redes de Computadores e vivência internacional. Focado em transição para áreas de Cloud e DevOps, com conhecimentos em Linux, Docker, Git e infraestrutura AWS.</p>
+    </section>
+
+    <section>
+        <h3>🚀 Projetos Cloud (Destaque)</h3>
+        <ul>
+            <li><strong>Cloud Resume Challenge:</strong> Website serverless hospedado na AWS utilizando S3, CloudFront, API Gateway, Lambda (Python) e DynamoDB.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>🛠️ Competências Técnicas</h3>
+        <div class="skills-grid">
+            <div>
+                <strong>DevOps & Infra</strong>
+                <ul>
+                    <li>Linux (Fundamentos sólidos)</li>
+                    <li>Git & GitHub (Workflows)</li>
+                    <li>Docker (Containers)</li>
+                    <li>CI/CD & GitHub Actions</li>
+                </ul>
+            </div>
+            <div>
+                <strong>Cloud & Dev</strong>
+                <ul>
+                    <li>AWS Cloud Fundamentals</li>
+                    <li>Python & Bash (Scripting)</li>
+                    <li>HTML5, CSS3 & Next.js</li>
+                    <li>MySQL (Básico)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h3>💼 Experiência Profissional</h3>
+        <div class="item">
+            <strong>Auxiliar Administrativo | C&R Licitações</strong>
+            <small>Set 2023 – Atual</small>
+            <ul>
+                <li>Gestão de documentos digitais e fluxos operacionais estruturados.</li>
+            </ul>
+        </div>
+
+        <div class="item">
+            <strong>Técnico de T.I (Estágio) | Localnet Express</strong>
+            <small>Set 2022 – Mar 2023</small>
+            <ul>
+                <li>Suporte N1 (Windows/Linux) e manutenção de redes e sistemas.</li>
+            </ul>
+        </div>
+
+        <div class="item">
+            <strong>Multiskill (Estágio) | CDF</strong>
+            <small>Ago 2021 – Fev 2022</small>
+            <ul>
+                <li>Suporte operacional e registro de dados em sistemas internos.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h3>🎓 Formação & Certificações</h3>
+        <ul>
+            <li><strong>Graduação:</strong> ADS – FIAP (Conclusão 2024)</li>
+            <li><strong>Técnico:</strong> Redes de Computadores (2021)</li>
+            <li><strong>Intercâmbio:</strong> 24 semanas na ILSC School Toronto, Canadá.</li>
+            <li><strong>Cursos:</strong> Cloud Solution Architect (FIAP), Linux Completo, Git/Github.</li>
+        </ul>
+    </section>
+
+    <div class="stats">
+        Esta página foi visualizada <span id="counter">carregando...</span> vezes (via AWS Serverless).
+    </div>
+</div> 
+
+<script>
+    const apiURL = 'https://xwcdg2f7ud.execute-api.us-east-1.amazonaws.com/default/update-resume-counter';
+
+    async function getCounter() {
+        try {
+            let response = await fetch(apiURL);
+            let data = await response.json();
+            document.getElementById('counter').innerText = data.count;
+        } catch (error) {
+            console.error("Erro ao buscar contador:", error);
+            document.getElementById('counter').innerText = "Erro";
+        }
+    }
+    getCounter();
+</script>
+    
+</body>
+</html>
